@@ -20,3 +20,4 @@ The goal here is to divide customers into groups according to their total spendi
 The goal is to see the sales averages over a three month period and to ensure that they are stable. It is measurable in that, it can give a more stable view of trends currently going on and can help in knowing what goods to re-stock the inventory and also making decisions. The windows function used here are  AVG() OVER()
 # Step 3: Database Schema Design #
 
+
