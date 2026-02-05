@@ -19,5 +19,12 @@ The goal here is to divide customers into groups according to their total spendi
 ### Three-month moving averages ###
 The goal is to see the sales averages over a three month period and to ensure that they are stable. It is measurable in that, it can give a more stable view of trends currently going on and can help in knowing what goods to re-stock the inventory and also making decisions. The windows function used here are  AVG() OVER()
 # Step 3: Database Schema Design #
-
+### Sql for the Customer table ### 
+create table Customer(Customer_id NUMBER NOT NULL PRIMARY KEY, Fname VARCHAR2(20) NOT NULL, Lname VARCHAR(20) NOT NULL, Region VARCHAR(50), Phone VARCHAR(20),Email VARCHAR2(50))
+### Sql for the Products table ###
+CREATE TABLE Products (Product_ID NUMBER NOT NULL PRIMARY KEY, Product_Name VARCHAR(20) NOT NULL, Category VARCHAR(20) NOT NULL, Price NUMBER NOT NULL);
+### Sql for the Sales table ###
+- CREATE TABLE Sales (Sales_ID NUMBER NOT NULL PRIMARY KEY, Customer_id NUMBER NOT NULL, Product_ID NUMBER NOT NULL, Sales_Date DATE, quantity NUMBER, Total_Amount NUMBER)
+- ALTER Table Sales ADD Foreign Key(Product_ID) references Products(Product_ID);
+- ALTER Table Sales ADD Foreign Key(Customer_ID) references Customer(Customer_ID);
 
