@@ -1,1 +1,61 @@
+- Inner Join
+- Description: Here, it shows only sales that have a matching customer and product
+- Sql Code:
+SELECT s.sales_id,
+c.Fname,
+p.product_name,
+s.sales_date,
+s.quantity,
+s.total_amount
+FROM Sales s
+INNER JOIN Customer c ON s.customer_id = c.customer_id
+INNER JOIN Products p ON s.product_id = p.product_id;
+- Screenshot: ![inner join](https://github.com/user-attachments/assets/f9b3d1f0-3de9-4aa5-b10e-31876551c066)
+ 
+- Left Join
+- Description: Here, it shows customers who have never purchased a product
+- Sql Code:
+SELECT c.customer_id,
+c.Fname,
+s.sales_id
+FROM Customer c
+LEFT JOIN Sales s ON c.customer_id = s.customer_id
+WHERE s.sales_id IS NULL;
+- Screenshot: ![left join](https://github.com/user-attachments/assets/8f523dee-886e-4e13-82cb-ab7f41d400ea)
 
+- Right Join
+- Description: It shows products that have never been sold
+- Sql code:
+SELECT p.product_id,
+p.product_name,
+s.sales_id
+FROM Sales s
+RIGHT JOIN Products p ON s.product_id = p.product_id
+WHERE s.sales_id IS NULL
+- Screenshot: ![right join](https://github.com/user-attachments/assets/f6b4dfbb-b2e4-4f0e-9c14-60d4a1bb392b)
+
+- Full outer Join
+- Description: It shows all customers and all sales including those without sales
+- Sql code:
+SELECT c.customer_id,
+c.Fname, c.Lname,
+s.sales_id,
+s.product_id
+FROM Customer c
+FULL OUTER JOIN Sales s
+ON c.customer_id = s.customer_id;
+- Screenshot: 
+![full outer join](https://github.com/user-attachments/assets/890b7346-9180-4e7c-b7cb-7e674175755a)
+
+- Self Join
+- Description: It pairs customers in the same region
+- Sql code:
+SELECT c1.Fname AS customer1,
+c2.Fname AS customer2,
+c1.region
+FROM Customer c1
+JOIN Customer c2
+  ON c1.region = c2.region
+ AND c1.customer_id < c2.customer_id;
+- Screenshot: 
+![self join](https://github.com/user-attachments/assets/e2788616-a257-4db3-b626-1f996c094718)
