@@ -27,4 +27,11 @@ The goal is to see the sales averages over a three month period and to ensure th
 - CREATE TABLE Sales (Sales_ID NUMBER NOT NULL PRIMARY KEY, Customer_id NUMBER NOT NULL, Product_ID NUMBER NOT NULL, Sales_Date DATE, quantity NUMBER, Total_Amount NUMBER)
 - ALTER Table Sales ADD Foreign Key(Product_ID) references Products(Product_ID);
 - ALTER Table Sales ADD Foreign Key(Customer_ID) references Customer(Customer_ID);
+# Step 4:  Part A — SQL JOINs Implementation #
+- Inner Join: Shows only sales that have a matching customer and product. 
+- Left Join: shows customer who have never made a purchase
+- Right Join: shows products that have never been sold
+- Full Outer Join: shows all customers and all sales including those with no sales and sales
+- Self Join: Pairing customers in the same region
+
 
