@@ -30,10 +30,9 @@ The goal is to see the sales averages over a three month period and to ensure th
 # Step 4:  Part A — SQL JOINs Implementation #
 - Inner Join: Shows only sales that have a matching customer and product. The Sql Code used for this is SELECT s.sales_id, c.Fname, p.product_name, s.sales_date, s.quantity, s.total_amount FROM Sales s INNER JOIN Customer c ON s.customer_id = c.customer_id INNER JOIN Products p ON s.product_id = p.product_id;
 - Left Join: shows customer who have never made a purchase. Ther Sql code used here is: SELECT c.customer_id, c.Fname, s.sales_id FROM Customer c LEFT JOIN Sales s ON c.customer_id = s.customer_id WHERE s.sales_id IS NULL;
-# Step 5: Part B — Window Functions Implementation #
-
 - Right Join: shows products that have never been sold. The Sql code here is: SELECT p.product_id, p.product_name, s.sales_id FROM Sales s RIGHT JOIN Products p ON s.product_id = p.product_id WHERE s.sales_id IS NULL
 - Full Outer Join: shows all customers and all sales including those with no sales and sales. The Sql code used here is: SELECT c.customer_id, c.Fname, c.Lname, s.sales_id, s.product_id FROM Customer c FULL OUTER JOIN Sales s ON c.customer_id = s.customer_id;
 - Self Join: Pairing customers in the same region. The Sql code here is: SELECT c1.Fname AS customer1, c2.Fname AS customer2, c1.region FROM Customer c1 JOIN Customer c2 ON c1.region = c2.region AND c1.customer_id < c2.customer_id;
+  # Step 5: Part B — Window Functions Implementation #
 
 
